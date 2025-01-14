@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Jost";
+    src: url("./assets/fonts/jost/Jost-VariableFont_wght.ttf");
+    font-style: normal;
+    font-weight: 100 900;
+  }
+
+  @font-face {
+    font-family: "Jost";
+    src: url("./assets/fonts/jost/Jost-Italic-VariableFont_wght.ttf");
+    font-style: italic;
+    font-weight: 100 900;
+  }
+}
+
+.custom-dropdown ul {
+  border-radius: 10px !important;
+  box-shadow: 0px 10px 40px -7px rgba(55, 63, 104, 0.35);
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+}
+
+.custom-dropdown ul li {
+  font-size: 16px !important;
+  line-height: normal !important;
+  color: #647196 !important;
+  font-family: "Jost" !important;
+  border-radius: 0 !important;
+  padding: 12px 24px !important;
+  font-weight: 400 !important;
+}
+
+.custom-dropdown ul li:not(:last-child) {
+  border-bottom: 1px solid #f2f2f2 !important;
+}
+
+.custom-dropdown-button.ant-btn {
+  font-size: 15px !important;
+  line-height: 150% !important;
+  color: #3a4374 !important;
+  padding: 13px 24px !important;
+  border-radius: 5px !important;
+  color: #201f24 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  font-family: "Jost" !important;
+  box-shadow: none !important;
+  background: #f7f8fd !important;
+  border: 1px solid transparent !important;
+}
+
+.custom-dropdown-button.ant-btn:focus {
+  outline: none !important;
+  border: 1px solid #4661e6 !important;
+}
