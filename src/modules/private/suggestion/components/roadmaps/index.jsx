@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "../../../../../generalComponents";
 
 export const Roadmaps = () => {
@@ -5,19 +6,19 @@ export const Roadmaps = () => {
     {
       id: 0,
       title: "Planned",
-      count: "0",
+      count: "2",
       icon: "bg-accent-peach",
     },
     {
       id: 1,
       title: "In-Progress",
-      count: "0",
+      count: "3",
       icon: "bg-primary",
     },
     {
       id: 2,
       title: "Live",
-      count: "0",
+      count: "1",
       icon: "bg-accent-cyan",
     },
   ];
@@ -26,9 +27,9 @@ export const Roadmaps = () => {
     <div className="bg-grey-0 md:pt-5 p-6 rounded-[10px] flex flex-col  xl:gap-6 md:flex-1">
       <div className="flex items-center gap-2 justify-between mb-6 xl:mb-0">
         <h3>Roadmap</h3>
-        <div>
-          <Button label="View" variant="link" disabled />
-        </div>
+        <Link to="/roadmap">
+          <Button label="View" variant="link" />
+        </Link>
       </div>
       <div className="flex flex-col gap-2 ">
         {roadMaps.map((stage) => (

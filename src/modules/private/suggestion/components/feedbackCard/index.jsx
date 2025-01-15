@@ -2,11 +2,59 @@ import { CategoryTag, UpvoteCount } from "../../../../../generalComponents";
 import iconComment from "../../../../../assets/shared/icon-comments.svg";
 
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-export const FeedbackCard = ({ feedback }) => {
+const roadMaps = [
+  {
+    id: 0,
+    title: "Planned",
+    count: "0",
+    icon: "bg-accent-peach",
+    border: "border-accent-peach",
+  },
+  {
+    id: 1,
+    title: "In-Progress",
+    count: "0",
+    icon: "bg-primary",
+    border: "border-primary",
+  },
+  {
+    id: 2,
+    title: "Live",
+    count: "0",
+    icon: "bg-accent-cyan",
+    border: "border-accent-cyan",
+  },
+];
+
+export const FeedbackCard = ({
+  feedback,
+  isRoadmapFeedback = false,
+  activeTab = "",
+}) => {
   const navigate = useNavigate();
+
+  const activeRoadMap = roadMaps.filter(
+    (roadmap) => roadmap.title === activeTab?.title
+  )[0];
+
   return (
-    <div className="bg-grey-0 rounded-[10px] p-6 md:px-8 md:py-7 md:flex md:items-start md:gap-10">
+    <div
+      className={`bg-grey-0 rounded-[10px] p-6 md:px-8 md:py-7 md:flex md:items-start md:gap-10 ${
+        isRoadmapFeedback &&
+        activeRoadMap &&
+        `border-t-4 ${activeRoadMap.border} `
+      }`}
+    >
+      {isRoadmapFeedback && (
+        <div className="flex items-center gap-2 text-xs text-grey-300 mb-4">
+          <span
+            className={`${activeRoadMap?.icon} size-2 rounded-full flex-shrink-0`}
+          ></span>
+          {activeRoadMap?.title}
+        </div>
+      )}
       <div className="hidden md:flex">
         <UpvoteCount upvotes={feedback.upvotes} />
       </div>

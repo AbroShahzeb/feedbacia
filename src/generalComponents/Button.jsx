@@ -8,6 +8,7 @@ export const Button = ({
   variant = "primary",
   onClick,
   type = "button",
+  style,
 }) => {
   const navigate = useNavigate();
 
@@ -25,6 +26,7 @@ export const Button = ({
     back: "py-4 px-10 h-[53px] rounded-[10px] bg-grey-500 text-grey-100 text-[14px] font-bold leading-normal hover:underline ",
     "back-transparent":
       "text-grey-300 text-[14px] font-bold leading-normal hover:underline",
+
     link: "text-grey-300 text-[13px] font-semibold leading-normal underline disabled:opacity-25",
   };
   return (
@@ -40,9 +42,10 @@ export const Button = ({
         onClick && onClick();
       }}
       type={type}
+      style={style}
     >
       {(variant === "back" || variant === "back-transparent") && (
-        <span className="text-secondary">
+        <span>
           <IconArrowLeft />
         </span>
       )}
