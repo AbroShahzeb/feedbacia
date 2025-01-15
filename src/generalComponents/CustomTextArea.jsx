@@ -5,6 +5,7 @@ export const CustomTextArea = ({
   validationRules,
   name,
   className = "",
+  maxLength,
 }) => {
   return (
     <div>
@@ -16,6 +17,7 @@ export const CustomTextArea = ({
             ? "border-[#D73737]"
             : "border-transparent focus:border-secondary "
         } bg-grey-50 ${className}`}
+        maxLength={maxLength && maxLength}
       ></textarea>
       {error && (
         <p className="text-[14px] font-normal text-[#D73737] mt-1">{error}</p>

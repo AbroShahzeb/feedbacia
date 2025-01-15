@@ -1,7 +1,10 @@
 import { CategoryTag, UpvoteCount } from "../../../../../generalComponents";
 import iconComment from "../../../../../assets/shared/icon-comments.svg";
 
+import { useNavigate } from "react-router-dom";
+
 export const FeedbackCard = ({ feedback }) => {
+  const navigate = useNavigate();
   return (
     <div className="bg-grey-0 rounded-[10px] p-6 md:px-8 md:py-7 md:flex md:items-start md:gap-10">
       <div className="hidden md:flex">
@@ -9,7 +12,10 @@ export const FeedbackCard = ({ feedback }) => {
       </div>
       <div>
         <div>
-          <h3 className="text-xs md:text-xl font-bold text-grey-400">
+          <h3
+            className="text-xs md:text-xl font-bold text-grey-400 hover:underline cursor-pointer"
+            onClick={() => navigate(`/details/${feedback.id}`)}
+          >
             {feedback.title}
           </h3>
           <p className="mt-[9px] md:mt-1 text-xs md:text-md text-grey-300">

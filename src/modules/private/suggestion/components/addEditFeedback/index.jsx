@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import iconEditFeedback from "../../../../../assets/shared/icon-edit-feedback.svg";
 import iconNewFeedback from "../../../../../assets/shared/icon-new-feedback.svg";
+import { productRequests } from "../../../../../data";
+
 import {
   Button,
   CustomInput,
@@ -10,24 +12,42 @@ import {
 } from "../../../../../generalComponents";
 
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 
-export const AddEditFeedback = ({
-  isEdit = false,
-  feedbackData,
-  feedbackId,
-}) => {
+export const AddEditFeedback = ({ isEdit = false }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm();
+
+  const { id } = useParams();
 
   const [selectedCategory, setSelectedCategory] = useState({});
   const [selectedStatus, setSelectedStatus] = useState({});
 
+  const [feedbackData, setFeedbackData] = useState({});
+
   const handleFormSubmit = (data) => {
     console.log("Data", data);
   };
+
+  useEffect(() => {
+    if (id) {
+      const data = productRequests.find(
+        (feedback) => feedback.id === Number(id)
+      );
+      setFeedbackData(data);
+    }
+  }, [id]);
+
+  useEffect(() => {
+    setValue("title", feedbackData?.title);
+    setValue("description", feedbackData?.description);
+    setSelectedCategory({ label: feedbackData?.category });
+    setSelectedStatus({ label: feedbackData?.status });
+  }, [feedbackData]);
 
   return (
     <main className="w-full min-h-screen flex items-start justify-center bg-grey-50 px-6 py-8 pb-[77px] md:px-[114px] md:pt-[56px] md:pb-[223px]  xl:pt-[92px] xl:pb-[187px]">
@@ -50,9 +70,7 @@ export const AddEditFeedback = ({
           <div>
             <h2 className="text-xl font-bold text-grey-400 mt-[44px] md:mt-[52px] md:text-3xl">
               {isEdit
-                ? `Editing ‘${
-                    feedbackData?.title || "Add a dark theme option"
-                  }’`
+                ? `Editing ‘${feedbackData?.title}’`
                 : "Create New Feedback"}
             </h2>
 
@@ -131,14 +149,14 @@ export const AddEditFeedback = ({
               <div className="mt-4">
                 <CustomTextArea
                   placeholder=""
-                  name="detail"
+                  name="description"
                   register={register}
                   validationRules={{
                     required: "Can't be empty",
                     minlength: [10, "Must be greater than 10 characters"],
                     maxlength: [60, "Cannot be greater than 60 characters"],
                   }}
-                  error={errors?.detail?.message}
+                  error={errors?.description?.message}
                   className="w-full h-[120px] md:h-[96px]"
                 />
               </div>

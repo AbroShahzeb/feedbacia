@@ -16,6 +16,8 @@ export const Button = ({
       "pb-[11px] pt-[13px] px-6 h-[44px] rounded-[10px] bg-primary text-grey-100 text-[14px] font-bold leading-normal hover:bg-[#C75AF6]",
     secondary:
       "pb-[11px] pt-[13px] px-6 h-[44px] rounded-[10px] bg-secondary text-grey-100 text-[14px] font-bold leading-normal hover:bg-[#7C91F9]",
+    "secondary-transparent":
+      " text-secondary text-[14px] font-semibold leading-normal hover:text-[#7C91F9]",
     tertiary:
       "pb-[11px] pt-[13px] px-6 h-[44px] rounded-[10px] bg-grey-400 text-grey-100 text-[14px] font-bold leading-normal hover:bg-[#656EA3]",
     danger:

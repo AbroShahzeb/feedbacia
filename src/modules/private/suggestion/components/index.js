@@ -5,6 +5,7 @@ import { FeedbackCard } from "./feedbackCard";
 import { Header } from "./header";
 import { ProductCard } from "./productCard";
 import { Sidebar } from "./sidebar";
+import { FeedbackDetail } from "./detail/FeebackDetail";
 
 export {
   EmptySuggestion,
@@ -14,4 +15,5 @@ export {
   Header,
   ProductCard,
   Sidebar,
+  FeedbackDetail,
 };
