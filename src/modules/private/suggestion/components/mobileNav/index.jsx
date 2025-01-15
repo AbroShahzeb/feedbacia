@@ -48,9 +48,14 @@ export const MobileNav = () => {
       {/* Menu Upper Body End */}
 
       {/* Expanded Menu Start */}
-      {isOpen && (
-        <AnimatePresence>
-          <div className="fixed z-20 top-[72px] right-0 bottom-0 bg-black/50  w-full md:hidden">
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="fixed z-20 top-[72px] right-0 bottom-0 bg-black/50  w-full md:hidden"
+            ></button>
             <motion.div
               initial="closed"
               variants={variants}
@@ -63,6 +68,7 @@ export const MobileNav = () => {
                 animate={isOpen ? "shown" : "hidden"}
                 variants={navCardVariants}
                 transition={{ delay: 0.3 }}
+                exit={"hidden"}
               >
                 <Tags />
               </motion.div>
@@ -71,13 +77,14 @@ export const MobileNav = () => {
                 animate={isOpen ? "shown" : "hidden"}
                 variants={navCardVariants}
                 transition={{ delay: 0.3 }}
+                exit={"hidden"}
               >
                 <Roadmaps />
               </motion.div>
             </motion.div>
-          </div>
-        </AnimatePresence>
-      )}
+          </>
+        )}
+      </AnimatePresence>
       {/* Expanded Menu End */}
     </div>
   );
