@@ -35,7 +35,7 @@ export const CustomDropdown = ({
         <Menu.Item key={option.value}>
           <div className="flex items-center gap-2 justify-between hover:text-primary">
             <span>{option.label}</span>
-            {selectedOption.label === option.label && (
+            {selectedOption?.label === option.label && (
               <span className="text-primary">
                 <IconCheck />
               </span>

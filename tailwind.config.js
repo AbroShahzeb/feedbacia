@@ -32,6 +32,14 @@ export default {
       "2xl": ["20px", { lineHeight: "29px", letterSpacing: "-0.25px" }],
       "3xl": ["24px", { lineHeight: "35px", letterSpacing: "-0.33px" }],
     },
+    backgroundImage: {
+      "suggestion-header-mobile":
+        'url("./assets/suggestions/mobile/background-header.png")',
+      "suggestion-header-tablet":
+        'url("./assets/suggestions/tablet/background-header.png")',
+      "suggestion-header-desktop":
+        'url("./assets/suggestions/desktop/background-header.png")',
+    },
   },
   plugins: [],
 };

@@ -30,7 +30,7 @@ export const SortByDropdown = ({ selectedOption, onSelect }) => {
       options={options}
       setOpen={setIsOpen}
       customOverlay={
-        <button className="flex items-center justify-between  text-grey-100/75 text-[14px] font-bold gap-[9px] py-[26px] px-[17px] rounded-[10px] bg-grey-500">
+        <button className="flex items-center justify-start md:justify-between  text-grey-100/75 text-[13px] md:text-[14px] font-bold gap-[9px]">
           <div>
             <span className="font-normal">Sort by : </span>
             <span>{selectedOption?.label}</span>

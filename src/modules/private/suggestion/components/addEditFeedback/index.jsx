@@ -131,14 +131,14 @@ export const AddEditFeedback = ({
               <div className="mt-4">
                 <CustomTextArea
                   placeholder=""
-                  name="title"
+                  name="detail"
                   register={register}
                   validationRules={{
                     required: "Can't be empty",
                     minlength: [10, "Must be greater than 10 characters"],
                     maxlength: [60, "Cannot be greater than 60 characters"],
                   }}
-                  error={errors?.title?.message}
+                  error={errors?.detail?.message}
                   className="w-full h-[120px] md:h-[96px]"
                 />
               </div>
