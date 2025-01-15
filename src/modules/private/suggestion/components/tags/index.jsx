@@ -29,7 +29,7 @@ export const Tags = () => {
   ];
 
   return (
-    <div className="bg-grey-0 md:p-6 rounded-[10px] flex flex-wrap  md:flex-1 gap-2 gap-y-[14px]">
+    <div className="bg-grey-0 p-6 rounded-[10px] flex flex-wrap  md:flex-1 gap-2 gap-y-[14px] mb-6 md:mb-0">
       {tags.map((tag) => (
         <CategoryTag tagName={tag.label} key={tag.id} className="md:h-[38px]" />
       ))}
