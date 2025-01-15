@@ -2,7 +2,7 @@ import { Button } from "../../../../../../../../../../../generalComponents";
 
 export const CommentUser = ({ user }) => {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 md:gap-8">
       <div className="flex-shrink-0">
         <img
           src={user?.image}
@@ -10,11 +10,11 @@ export const CommentUser = ({ user }) => {
           className="size-10 rounded-full"
         />
       </div>
-      <div className="text-left text-xs">
+      <div className="text-left text-xs md:text-[14px]">
         <p className=" tracking-[-0.181px] text-grey-400 font-bold">
           {user?.name}
         </p>
-        <p className="text-grey-300">{user?.username}</p>
+        <p className="text-grey-300">@{user?.username}</p>
       </div>
 
       <div className="ml-auto">

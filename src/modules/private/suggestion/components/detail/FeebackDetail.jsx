@@ -16,8 +16,8 @@ export const FeedbackDetail = () => {
   }, [id]);
 
   return (
-    <main className="p-6 bg-grey-50 min-h-svh">
-      <div className="flex items-center gap-2 justify-between">
+    <main className="p-6 md:pt-[56px] md:pb-[120px] lg:pt-20 lg:pb-[137px] bg-grey-50 min-h-svh ">
+      <div className="flex items-center gap-2 justify-between md:max-w-[730px] md:mx-auto">
         <div>
           <Button variant="back-transparent" label="Go back" />
         </div>
@@ -26,15 +26,15 @@ export const FeedbackDetail = () => {
         </Link>
       </div>
 
-      <div className="my-6">
+      <div className="my-6 md:max-w-[730px] md:mx-auto">
         <FeedbackCard feedback={feedbackData} />
       </div>
 
-      <div className="mb-6">
+      <div className="mb-6 md:max-w-[730px] md:mx-auto">
         <Comments comments={feedbackData?.comments} />
       </div>
 
-      <div>
+      <div className="md:max-w-[730px] md:mx-auto">
         <AddCommentForm />
       </div>
     </main>
