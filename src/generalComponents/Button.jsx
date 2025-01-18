@@ -25,9 +25,9 @@ export const Button = ({
       "pb-[11px] pt-[13px] px-6 h-[44px] rounded-[10px] bg-[#D73737] text-grey-100 text-[14px] font-bold leading-normal hover:bg-[#E98888]",
     back: "py-4 px-10 h-[53px] rounded-[10px] bg-grey-500 text-grey-100 text-[14px] font-bold leading-normal hover:underline ",
     "back-transparent":
-      "text-grey-300 text-[14px] font-bold leading-normal hover:underline",
+      "text-grey-300 text-[14px] font-bold leading-normal hover:underline dark:text-grey-100",
 
-    link: "text-grey-300 text-[13px] font-semibold leading-normal underline disabled:opacity-25",
+    link: "text-secondary text-[13px] font-semibold leading-normal underline disabled:opacity-25",
   };
   return (
     <button

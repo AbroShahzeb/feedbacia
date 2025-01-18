@@ -4,9 +4,9 @@ import iconComment from "../../../../../assets/shared/icon-comments.svg";
 export const RoadmapCard = ({ feedback, activeTab }) => {
   return (
     <div
-      className={`bg-grey-0 rounded-[10px] p-6   ${`border-t-4 ${activeTab.border} `}`}
+      className={`bg-grey-0 dark:bg-grey-600 rounded-[10px] p-6   ${`border-t-[6px] ${activeTab.border} `}`}
     >
-      <div className="flex items-center gap-2 text-xs text-grey-300 mb-4">
+      <div className="flex items-center gap-2 text-xs text-grey-300 dark:text-grey-50/75 mb-4">
         <span
           className={`${activeTab?.icon} size-2 rounded-full flex-shrink-0`}
         ></span>
@@ -16,12 +16,12 @@ export const RoadmapCard = ({ feedback, activeTab }) => {
       <div>
         <div>
           <h3
-            className="text-xs  font-bold text-grey-400 hover:underline cursor-pointer"
+            className="text-xs  font-bold text-grey-400 dark:text-grey-100 hover:underline cursor-pointer"
             onClick={() => navigate(`/details/${feedback.id}`)}
           >
             {feedback.title}
           </h3>
-          <p className="mt-[9px] text-xs  text-grey-300">
+          <p className="mt-[9px] text-xs  text-grey-300 dark:text-grey-100/75">
             {feedback.description}
           </p>
           <div className="mt-2">
@@ -34,7 +34,7 @@ export const RoadmapCard = ({ feedback, activeTab }) => {
         <div className="block">
           <UpvoteCount upvotes={feedback.upvotes} forSmallScreens={true} />
         </div>
-        <div className="flex items-center gap-1 text-grey-400">
+        <div className="flex items-center gap-1 text-grey-400 dark:text-grey-100/75">
           <img src={iconComment} alt="Comments Icon" />
           <p
             className={`text-xs font-bold ${

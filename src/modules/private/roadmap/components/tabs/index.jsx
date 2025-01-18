@@ -2,23 +2,29 @@ const tabs = [
   {
     id: 0,
     title: "Planned",
-    desc: "Ideas prioritized for research",
+    count: "2",
+    icon: "bg-accent-peach",
+    border: "border-accent-peach",
     value: "planned",
-    count: 2,
+    desc: "Ideas prioritized for research",
   },
   {
     id: 1,
     title: "In-Progress",
-    desc: "Currently being developed",
+    count: "3",
+    icon: "bg-primary",
+    border: "border-primary",
     value: "in-progress",
-    count: 3,
+    desc: "Currently being developed",
   },
   {
     id: 2,
     title: "Live",
-    desc: "Released features",
+    count: "1",
+    icon: "bg-accent-cyan",
+    border: "border-accent-cyan",
     value: "live",
-    count: 1,
+    desc: "Released features",
   },
 ];
 
@@ -28,7 +34,7 @@ export const Tabs = ({ activeTab, setActiveTab }) => {
       {tabs.map((tab) => (
         <button
           key={tab.id}
-          className={`flex-1 p-5 pb-4 border-b-4 text-xs font-bold text-grey-400 ${
+          className={`flex-1 p-5 pb-4 border-b-4 text-xs font-bold text-grey-400 dark:text-grey-100/80 ${
             tab.id === activeTab.id ? "border-primary" : "border-transparent"
           }`}
           onClick={() => setActiveTab(tab)}

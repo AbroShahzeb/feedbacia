@@ -3,7 +3,7 @@ import { Button } from "../../../../../generalComponents";
 
 export const Header = () => {
   return (
-    <div className="p-6 md:px-8 bg-grey-500 flex items-center gap-3 justify-between md:rounded-[10px] md:h-[113px] max-w-[1110px] mx-auto">
+    <div className="p-6 md:px-8 bg-grey-500 dark:bg-grey-600 flex items-center gap-3 justify-between md:rounded-[10px] md:h-[113px] max-w-[1110px] mx-auto">
       <div>
         <Button
           variant="back-transparent"

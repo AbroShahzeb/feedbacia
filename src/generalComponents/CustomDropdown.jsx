@@ -29,11 +29,11 @@ export const CustomDropdown = ({
   const menu = (
     <Menu
       onClick={handleMenuClick}
-      className="max-h-[300px] scroll-y-auto scrollbar-none"
+      className="max-h-[300px] scroll-y-auto scrollbar-none bg-red-500"
     >
       {options.map((option) => (
         <Menu.Item key={option.value}>
-          <div className="flex items-center gap-2 justify-between hover:text-primary">
+          <div className="flex items-center gap-2 justify-between hover:text-primary w-full ">
             <span>{option.label}</span>
             {selectedOption?.label === option.label && (
               <span className="text-primary">

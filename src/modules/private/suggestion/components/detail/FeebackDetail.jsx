@@ -16,7 +16,7 @@ export const FeedbackDetail = () => {
   }, [id]);
 
   return (
-    <main className="p-6 md:pt-[56px] md:pb-[120px] lg:pt-20 lg:pb-[137px] bg-grey-50 min-h-svh ">
+    <main className="p-6 md:pt-[56px] md:pb-[120px] lg:pt-20 lg:pb-[137px] bg-grey-50 dark:bg-grey-950 min-h-svh ">
       <div className="flex items-center gap-2 justify-between md:max-w-[730px] md:mx-auto">
         <div>
           <Button variant="back-transparent" label="Go back" />

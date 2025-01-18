@@ -24,9 +24,9 @@ export const Roadmaps = () => {
   ];
 
   return (
-    <div className="bg-grey-0 md:pt-5 p-6 rounded-[10px] flex flex-col  xl:gap-6 md:flex-1">
+    <div className="bg-grey-0 dark:bg-grey-600 md:pt-5 p-6 rounded-[10px] flex flex-col  xl:gap-6 md:flex-1">
       <div className="flex items-center gap-2 justify-between mb-6 xl:mb-0">
-        <h3>Roadmap</h3>
+        <h3 className="dark:text-grey-50">Roadmap</h3>
         <Link to="/roadmap">
           <Button label="View" variant="link" />
         </Link>
@@ -40,8 +40,12 @@ export const Roadmaps = () => {
             <span
               className={`size-2 rounded-full flex-shrink-0 ${stage.icon}`}
             ></span>
-            <p className="mr-auto text-md text-grey-300">{stage.title}</p>
-            <p className="text-md font-semibold text-grey-300">{stage.count}</p>
+            <p className="mr-auto text-md text-grey-300 dark:text-grey-50">
+              {stage.title}
+            </p>
+            <p className="text-md font-semibold text-grey-300 dark:text-grey-50">
+              {stage.count}
+            </p>
           </div>
         ))}
       </div>

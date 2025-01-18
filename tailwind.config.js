@@ -13,6 +13,8 @@ export default {
           300: "#647196",
           400: "#3A4374",
           500: "#373F68",
+          600: "#2A314F",
+          950: "#1F263B",
         },
         accent: {
           peach: "#F49F85",
@@ -41,5 +43,6 @@ export default {
         'url("./assets/suggestions/desktop/background-header.png")',
     },
   },
+  darkMode: "class",
   plugins: [],
 };

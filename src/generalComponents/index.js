@@ -7,6 +7,7 @@ import { UpvoteCount } from "./UpvoteCount";
 import { CategoryDropdown } from "./CategoryDropdown";
 import { CustomTextArea } from "./CustomTextArea";
 import { FeedbackStatusDropdown } from "./FeedbackStatusDropdown";
+import { ThemeToggler } from "./themeToggler";
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   CategoryDropdown,
   CustomTextArea,
   FeedbackStatusDropdown,
+  ThemeToggler,
 };

@@ -11,10 +11,10 @@ export const CommentUser = ({ user }) => {
         />
       </div>
       <div className="text-left text-xs md:text-[14px]">
-        <p className=" tracking-[-0.181px] text-grey-400 font-bold">
+        <p className=" tracking-[-0.181px] text-grey-400 dark:text-grey-100 font-bold">
           {user?.name}
         </p>
-        <p className="text-grey-300">@{user?.username}</p>
+        <p className="text-grey-300 dark:text-grey-100/50">@{user?.username}</p>
       </div>
 
       <div className="ml-auto">

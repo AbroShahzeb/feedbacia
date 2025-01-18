@@ -11,12 +11,12 @@ export const CommentCard = ({ comment }) => {
         className={`${
           comment?.replies &&
           comment.replies.length > 0 &&
-          "md:border-l md:ml-[19px]"
+          "md:border-l dark:border-l-grey-400 md:ml-[19px]"
         }`}
       >
         {/* Comment */}
         <div
-          className={`text-xs text-grey-300 mt-4 ${
+          className={`text-xs text-grey-300 dark:text-grey-100/75 mt-4 ${
             comment?.replies && comment.replies.length > 0
               ? "md:ml-[53px]"
               : "md:ml-[72px]"

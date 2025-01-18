@@ -6,7 +6,7 @@ export const CommentReplies = ({ replies }) => {
       {replies.map((reply) => (
         <div className="pl-6">
           <CommentUser user={reply?.user} />
-          <div className="text-xs md:text-sm text-grey-300 mt-4">
+          <div className="text-xs md:text-sm text-grey-300 dark:text-grey-100/75 mt-4">
             <span className="text-primary font-bold">@{reply?.replyingTo}</span>{" "}
             {reply?.content}
           </div>

@@ -19,9 +19,11 @@ export const AddCommentForm = ({ maxCharacters = 250 }) => {
   return (
     <form
       onSubmit={handleSubmit(onAddComment)}
-      className="bg-grey-0 p-6 rounded-[10px]"
+      className="bg-grey-0 dark:bg-grey-600 p-6 rounded-[10px]"
     >
-      <div className="text-xl font-bold text-grey-400">Add Comment</div>
+      <div className="text-xl font-bold text-grey-400 dark:text-grey-100">
+        Add Comment
+      </div>
       <div className="w-full mt-6">
         <CustomTextArea
           register={register}
@@ -35,7 +37,7 @@ export const AddCommentForm = ({ maxCharacters = 250 }) => {
       </div>
 
       <div className="flex items-center gap-2 justify-between mt-4">
-        <p className="text-xs text-grey-300">
+        <p className="text-xs text-grey-300 dark:text-grey-100/75">
           {maxCharacters - commentInput?.length} characters left
         </p>
         <Button label="Post Comment" type="submit" />

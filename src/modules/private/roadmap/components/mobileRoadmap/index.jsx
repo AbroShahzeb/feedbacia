@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { productRequests } from "../../../../../data";
 import { FeedbackCard } from "../../../suggestion/components";
 import { Tabs } from "../tabs";
+import { RoadmapCard } from "../roadmapCard";
 
 export const MobileRoadmap = () => {
   const [activeTab, setActiveTab] = useState({
     id: 0,
     title: "Planned",
-    desc: "Ideas prioritized for research",
+
+    icon: "bg-accent-peach",
+    border: "border-accent-peach",
     value: "planned",
-    count: 2,
+    desc: "Ideas prioritized for research",
   });
 
   const [feedbacks, setFeedbacks] = useState(productRequests);
@@ -33,20 +36,18 @@ export const MobileRoadmap = () => {
 
       <div className="p-6 md:hidden">
         <div className="flex flex-col gap-1">
-          <p className="text-xl font-bold text-grey-400">
-            {activeTab?.title} ({activeTab?.count})
+          <p className="text-xl font-bold text-grey-400 dark:text-grey-100">
+            {activeTab?.title} ({feedbacks?.length})
           </p>
-          <p className="text-xs text-grey-300">{activeTab?.desc}</p>
+          <p className="text-xs text-grey-300 dark:text-grey-100/75">
+            {activeTab?.desc}
+          </p>
         </div>
       </div>
 
       <div className="p-6 flex flex-col gap-4 md:hidden">
         {feedbacks?.map((feedback) => (
-          <FeedbackCard
-            feedback={feedback}
-            isRoadmapFeedback={true}
-            activeTab={activeTab}
-          />
+          <RoadmapCard feedback={feedback} activeTab={activeTab} />
         ))}
       </div>
     </>

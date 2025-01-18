@@ -36,8 +36,26 @@
   font-weight: 400 !important;
 }
 
+.custom-dropdown ul li:hover {
+  color: #ad1fea !important;
+}
+
 .custom-dropdown ul li:not(:last-child) {
   border-bottom: 1px solid #f2f2f2 !important;
+}
+
+body.dark .custom-dropdown ul li {
+  background: #3a4374 !important;
+  color: #f2f4ff !important;
+}
+
+body.dark .custom-dropdown ul li:not(:last-child) {
+  border-bottom: 1px solid #647196 !important;
+}
+
+body.dark .custom-dropdown-button.ant-btn {
+  background: #373f68 !important;
+  color: rgb(242 244 255 / 0.75) !important;
 }
 
 .custom-dropdown-button.ant-btn {

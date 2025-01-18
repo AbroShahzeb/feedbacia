@@ -41,7 +41,7 @@ export const Roadmap = () => {
   };
 
   return (
-    <main className="md:px-10 md:py-[56px] md:pb-[95px] bg-grey-50 min-h-screen ">
+    <main className="md:px-10 md:py-[56px] md:pb-[95px] bg-grey-50 dark:bg-grey-950 min-h-screen ">
       <Header />
 
       <MobileRoadmap />
@@ -50,10 +50,12 @@ export const Roadmap = () => {
         {tabs.map((tab) => (
           <div className="flex-1">
             <div className="mt-8 mb-6">
-              <h3 className="text-[14px] font-bold text-grey-400 leading-[-0.194px]">
+              <h3 className="text-[14px] font-bold text-grey-400 dark:text-grey-100 leading-[-0.194px]">
                 {tab.title}
               </h3>
-              <p className="text-[14px] text-grey-300 mt-1">{tab.desc}</p>
+              <p className="text-[14px] text-grey-300 mt-1 dark:text-grey-100/75">
+                {tab.desc}
+              </p>
             </div>
 
             <div className="flex flex-col gap-4">
