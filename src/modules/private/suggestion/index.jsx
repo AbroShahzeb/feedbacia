@@ -9,7 +9,7 @@ import {
 
 export const Suggestion = () => {
   const [sortBy, setSortBy] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState(["1"]);
 
   return (
     <main className="w-full min-h-screen bg-grey-50 dark:bg-grey-950">
