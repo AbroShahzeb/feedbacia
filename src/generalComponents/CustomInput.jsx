@@ -5,9 +5,12 @@ export const CustomInput = ({
   validationRules,
   name,
   className = "",
+  postIcon,
+  postIconClickAction,
+  type = "text",
 }) => {
   return (
-    <div>
+    <div className="relative">
       <input
         placeholder={placeholder}
         {...register(name, validationRules)}
@@ -16,7 +19,18 @@ export const CustomInput = ({
             ? "border-[#D73737]"
             : "border-transparent focus:border-secondary "
         } bg-grey-50 ${className}`}
+        type={type}
       />
+      {postIcon && (
+        <button
+          onClick={() => postIconClickAction && postIconClickAction()}
+          className="absolute top-0 translate-y-1/2 right-3 text-grey-500 dark:text-grey-100 hover:opacity-80"
+          type="button"
+        >
+          {postIcon}
+        </button>
+      )}
+
       {error && (
         <p className="text-[14px] font-normal text-[#D73737] mt-1">{error}</p>
       )}
