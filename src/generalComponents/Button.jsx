@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { IconArrowLeft } from "../assets/svgAssetsComponents/IconArrowLeft";
+import { CustomLoader } from "./CustomLoader";
 
 export const Button = ({
   className = "",
@@ -9,6 +10,7 @@ export const Button = ({
   onClick,
   type = "button",
   style,
+  isLoading = false,
 }) => {
   const navigate = useNavigate();
 
@@ -32,9 +34,10 @@ export const Button = ({
   return (
     <button
       className={`${variants[variant]} ${className} ${
-        (variant === "back" || variant === "back-transparent") &&
-        "flex items-center gap-4"
-      } transition-all`}
+        variant === "back" || variant === "back-transparent"
+          ? "flex items-center gap-4"
+          : "grid grid-cols-1 grid-rows-1 items-center justify-center"
+      } transition-all `}
       disabled={disabled}
       onClick={() => {
         if (variant === "back-transparent" || variant === "back")
@@ -45,11 +48,24 @@ export const Button = ({
       style={style}
     >
       {(variant === "back" || variant === "back-transparent") && (
-        <span>
+        <span className="ml-4">
           <IconArrowLeft />
         </span>
       )}
-      {label}
+      {
+        <span
+          className={`${
+            isLoading && "opacity-0"
+          } col-start-1 col-end-1 row-start-1 row-end-1`}
+        >
+          {label}
+        </span>
+      }
+      {isLoading && (
+        <span className="col-start-1 col-end-1 row-start-1 row-end-1 flex items-center justify-center">
+          <CustomLoader />
+        </span>
+      )}
     </button>
   );
 };

@@ -14,10 +14,12 @@
     "@tanstack/react-query-devtools": "^5.64.2",
     "@theme-toggles/react": "^4.1.0",
     "antd": "^5.23.1",
+    "axios": "^1.7.9",
     "framer-motion": "^11.18.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.2",
+    "react-hot-toast": "^2.5.1",
     "react-router-dom": "^7.1.1"
   },
   "devDependencies": {

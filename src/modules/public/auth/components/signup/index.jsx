@@ -4,6 +4,9 @@ import { IconEyeOpen } from "../../../../../assets/svgAssetsComponents/IconEyeOp
 import { useState } from "react";
 import { IconEyeClose } from "../../../../../assets/svgAssetsComponents/IconEyeClose";
 import { Link } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { signupUser } from "../../../../../services/authApi";
+import toast from "react-hot-toast";
 
 export const Signup = () => {
   const {
@@ -12,8 +15,20 @@ export const Signup = () => {
     formState: { errors },
   } = useForm();
 
+  const { mutate, isPending } = useMutation({
+    mutationFn: signupUser,
+    onSuccess: (data) => {
+      if (data.status === "fail") {
+        toast.error(data.message);
+      } else {
+        toast.success("Signed up successfully. Redirecting...");
+      }
+    },
+  });
+
   const handleFormSubmit = (data) => {
     console.log(data);
+    mutate(data);
   };
 
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -161,7 +176,7 @@ export const Signup = () => {
 
             {/* Signup Actions */}
             <div className="mt-10  md:mt-8 ">
-              <Button label="Signup" type="submit" />
+              <Button label="Signup" type="submit" isLoading={isPending} />
             </div>
           </div>
         </form>

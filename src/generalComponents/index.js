@@ -8,6 +8,7 @@ import { CategoryDropdown } from "./CategoryDropdown";
 import { CustomTextArea } from "./CustomTextArea";
 import { FeedbackStatusDropdown } from "./FeedbackStatusDropdown";
 import { ThemeToggler } from "./themeToggler";
+import { CustomLoader } from "./CustomLoader";
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   CustomTextArea,
   FeedbackStatusDropdown,
   ThemeToggler,
+  CustomLoader,
 };
