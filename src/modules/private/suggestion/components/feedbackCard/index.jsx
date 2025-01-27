@@ -84,7 +84,7 @@ export const FeedbackCard = ({
         <div className="block md:hidden">
           <UpvoteCount upvotes={feedback.upvotes} />
         </div>
-        <div className="flex items-center gap-1 text-grey-400">
+        <div className="flex items-center gap-1 text-grey-400 dark:text-grey-100">
           <img src={iconComment} alt="Comments Icon" />
           <p
             className={`text-xs font-bold ${

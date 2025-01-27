@@ -65,7 +65,7 @@ export const MobileNav = () => {
               variants={variants}
               animate={isOpen ? "open" : "closed"}
               exit={"closed"}
-              className="w-[271px] bg-grey-50  p-6 fixed z-20 top-[72px] right-0 bottom-0"
+              className="w-[271px] bg-grey-50 dark:bg-grey-950  p-6 fixed z-20 top-[72px] right-0 bottom-0"
             >
               <motion.div
                 initial="hidden"
