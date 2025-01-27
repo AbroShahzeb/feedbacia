@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { AppRouter } from "./routes/AppRouter";
 import { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 function App() {
   useEffect(() => {
@@ -12,6 +13,16 @@ function App() {
       localStorage.setItem("theme", "light");
       document.getElementById("body").classList.remove("dark");
     }
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("http://localhost:3000", {
+        withCredentials: true,
+      });
+      console.log("response", response);
+    };
+    fetchData();
   }, []);
   return (
     <div>

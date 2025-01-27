@@ -23,6 +23,7 @@ export const Login = () => {
       } else {
         toast.success("Logged in successfully. Redirecting...");
       }
+      console.log(document.cookie);
     },
   });
 
