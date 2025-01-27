@@ -17,7 +17,9 @@ export const loginUser = async (body) => {
 
 export const signupUser = async (body) => {
   try {
-    const response = await axios.post(`${baseUrl}/user/signup`, body);
+    const response = await axios.post(`${baseUrl}/user/signup`, body, {
+      withCredentials: true,
+    });
     return response.data;
   } catch (err) {
     return err.response.data;
