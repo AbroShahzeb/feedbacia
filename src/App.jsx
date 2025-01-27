@@ -15,15 +15,6 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get("https://feedbacia-api.vercel.app", {
-        withCredentials: true,
-      });
-      console.log("response", response);
-    };
-    fetchData();
-  }, []);
   return (
     <div>
       <Toaster
