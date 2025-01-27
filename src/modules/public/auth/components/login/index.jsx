@@ -3,12 +3,17 @@ import { Button, CustomInput } from "../../../../../generalComponents";
 import { IconEyeOpen } from "../../../../../assets/svgAssetsComponents/IconEyeOpen";
 import { useState } from "react";
 import { IconEyeClose } from "../../../../../assets/svgAssetsComponents/IconEyeClose";
-import { Link } from "react-router-dom";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { Link, useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
 import { loginUser } from "../../../../../services/authApi";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { setCredentials } from "../../redux/slice";
 
 export const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -22,8 +27,11 @@ export const Login = () => {
         toast.error(data.message);
       } else {
         toast.success("Logged in successfully. Redirecting...");
+        localStorage.setItem("isAuthenticated", true);
+        localStorage.setItem("user", JSON.stringify(data.data.user));
+        dispatch(setCredentials(data.data.user));
+        navigate("/");
       }
-      console.log(document.cookie);
     },
   });
 

@@ -6,6 +6,7 @@ import { Tags } from "../tags";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ThemeToggler } from "../../../../../generalComponents";
+import { Profile } from "../productCard/components";
 
 export const MobileNav = () => {
   const variants = {
@@ -38,7 +39,10 @@ export const MobileNav = () => {
           <h2 className="text-sm font-bold">Frontend Mentor</h2>
           <p className="text-xs opacity-75">Feedback Board</p>
         </div>
-        <div className="ml-auto flex items-center justify-center mt-2 mr-4 text-white">
+        <div className="ml-auto ">
+          <Profile />
+        </div>
+        <div className="flex items-center justify-center mt-2 mr-4 text-white">
           <ThemeToggler />
         </div>
         <button onClick={() => setIsOpen((prev) => !prev)}>

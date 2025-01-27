@@ -10,19 +10,61 @@ import {
   ResetPassword,
   Signup,
 } from "../modules/public/auth/components";
+import ProtectedRoute from "./ProtectedRoute";
+import { Profile } from "../modules/private/profile";
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Suggestion />} />
-        <Route path="/details/:id" element={<FeedbackDetail />} />
         <Route
-          path="/edit-feedback/:id"
-          element={<AddEditFeedback isEdit={true} />}
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
         />
-        <Route path="/add-feedback" element={<AddEditFeedback />} />
-        <Route path="/roadmap" element={<Roadmap />} />
+        <Route
+          path="/feedbacks"
+          element={
+            <ProtectedRoute>
+              <Suggestion />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="/feedbacks/details/:id"
+          element={
+            <ProtectedRoute>
+              <FeedbackDetail />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/feedbacks/edit/:id"
+          element={
+            <ProtectedRoute>
+              <AddEditFeedback isEdit={true} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/feedbacks/add"
+          element={
+            <ProtectedRoute>
+              <AddEditFeedback />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/roadmap"
+          element={
+            <ProtectedRoute>
+              <Roadmap />
+            </ProtectedRoute>
+          }
+        />
 
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Navigate to="login" replace />} />
