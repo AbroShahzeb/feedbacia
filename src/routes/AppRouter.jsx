@@ -12,7 +12,10 @@ import {
 } from "../modules/public/auth/components";
 import ProtectedRoute from "./ProtectedRoute";
 import { Profile } from "../modules/private/profile";
-import { AppLayout } from "../layout";
+import {
+  ConvertToProduct,
+  ProfileDetails,
+} from "../modules/private/profile/components";
 
 export const AppRouter = () => {
   return (
@@ -25,7 +28,11 @@ export const AppRouter = () => {
               <Profile />
             </ProtectedRoute>
           }
-        />
+        >
+          <Route index element={<Navigate to="details" replace />} />
+          <Route path="details" element={<ProfileDetails />} />
+          <Route path="convert-to-product" element={<ConvertToProduct />} />
+        </Route>
         <Route
           path="feedbacks"
           element={

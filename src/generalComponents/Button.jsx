@@ -23,6 +23,8 @@ export const Button = ({
       " text-secondary text-[14px] font-semibold leading-normal hover:text-[#7C91F9]",
     tertiary:
       "pb-[11px] pt-[13px] px-6 h-[44px] rounded-[10px] bg-grey-400 text-grey-100 text-[14px] font-bold leading-normal hover:bg-[#656EA3]",
+    transparent:
+      "pb-[11px] pt-[13px] px-6 h-[44px] rounded-[10px] bg-transparent text-grey-500 dark:text-grey-50 text-[14px] font-bold leading-normal ",
     danger:
       "pb-[11px] pt-[13px] px-6 h-[44px] rounded-[10px] bg-[#D73737] text-grey-100 text-[14px] font-bold leading-normal hover:bg-[#E98888]",
     back: "py-4 px-10 h-[53px] rounded-[10px] bg-grey-500 text-grey-100 text-[14px] font-bold leading-normal hover:underline ",

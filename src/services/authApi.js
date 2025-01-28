@@ -25,3 +25,29 @@ export const signupUser = async (body) => {
     return err.response.data;
   }
 };
+
+export const updateMe = async (body) => {
+  try {
+    const response = await axios.patch(`${baseUrl}/user/update-me`, body, {
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (err) {
+    return err.response.data;
+  }
+};
+
+export const updatePassword = async (body) => {
+  try {
+    const response = await axios.patch(
+      `${baseUrl}/user/update-password`,
+      body,
+      {
+        withCredentials: true,
+      }
+    );
+    return response.data;
+  } catch (err) {
+    return err.response.data;
+  }
+};

@@ -3,7 +3,7 @@ import { Button, CustomInput } from "../../../../../generalComponents";
 import { IconEyeOpen } from "../../../../../assets/svgAssetsComponents/IconEyeOpen";
 import { useState } from "react";
 import { IconEyeClose } from "../../../../../assets/svgAssetsComponents/IconEyeClose";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { signupUser } from "../../../../../services/authApi";
 import toast from "react-hot-toast";
@@ -12,6 +12,7 @@ import { setCredentials } from "../../redux/slice";
 
 export const Signup = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -28,6 +29,7 @@ export const Signup = () => {
         localStorage.setItem("user", JSON.stringify(data.data.user));
         localStorage.setItem("isAuthenticated", true);
         dispatch(setCredentials(data.data.user));
+        navigate("/feedbacks");
       }
     },
   });

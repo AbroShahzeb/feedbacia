@@ -4,6 +4,7 @@ import { Profile } from "../../../modules/private/suggestion/components/productC
 import { IconClose, IconHamburger } from "../../../assets/svgAssetsComponents";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { Links } from "../../../modules/private/profile/components/Links";
 
 export const Navbar = () => {
   const { user } = useSelector((state) => state.auth);
@@ -67,7 +68,7 @@ export const Navbar = () => {
               transition={{ ease: "easeInOut" }}
               className="w-[271px] bg-grey-50 dark:bg-grey-950  p-6 fixed z-20 top-[72px] right-0 bottom-0"
             >
-              Hello world
+              <Links />
             </motion.div>
           </>
         )}

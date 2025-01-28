@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Header = ({ sortBy, setSortBy }) => {
   return (
-    <div className="px-6 py-2 md:py-6 md:rounded-[10px] bg-grey-500 dark:bg-grey-600 flex items-center justify-between gap-2 h-[56px] md:h-[72px]">
+    <div className="px-6 py-2 md:py-6 md:rounded-[10px] bg-grey-500 dark:bg-grey-500 flex items-center justify-between gap-2 h-[56px] md:h-[72px] xl:sticky xl:top-[112px]">
       <div className="mr-4 hidden md:block">
         <img src={iconSuggestions} alt="Bulb Icon" className="size-6" />
       </div>

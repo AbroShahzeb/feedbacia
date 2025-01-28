@@ -41,7 +41,7 @@ export const Roadmap = () => {
   };
 
   return (
-    <main className="md:px-10  md:pb-[95px] bg-grey-50 dark:bg-grey-950 min-h-screen py-10">
+    <main className="md:px-10  md:pb-[95px] bg-grey-50 dark:bg-grey-950 min-h-screen md:py-0">
       <Header />
 
       <MobileRoadmap />

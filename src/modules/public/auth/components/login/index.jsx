@@ -30,7 +30,7 @@ export const Login = () => {
         localStorage.setItem("isAuthenticated", true);
         localStorage.setItem("user", JSON.stringify(data.data.user));
         dispatch(setCredentials(data.data.user));
-        navigate("/");
+        navigate("/feedbacks");
       }
     },
   });
