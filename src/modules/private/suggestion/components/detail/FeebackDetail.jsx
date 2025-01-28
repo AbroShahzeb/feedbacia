@@ -21,7 +21,7 @@ export const FeedbackDetail = () => {
         <div>
           <Button variant="back-transparent" label="Go back" />
         </div>
-        <Link to={`/edit-feedback/${id}`}>
+        <Link to={`/feedbacks/edit/${id}`}>
           <Button variant="secondary" label="Edit Feedback" />
         </Link>
       </div>

@@ -13,7 +13,7 @@ export const Header = () => {
         <p className="text-xl text-grey-0 font-bold md:text-3xl">Roadmap</p>
       </div>
 
-      <Link to="/add-feedback">
+      <Link to="/feedbacks/add">
         <Button label="+ Add Feedback" />
       </Link>
     </div>

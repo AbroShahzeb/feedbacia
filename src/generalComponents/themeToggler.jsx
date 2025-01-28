@@ -18,7 +18,7 @@ export const ThemeToggler = () => {
   }, [isToggled]);
 
   return (
-    <div>
+    <div className="flex items-center">
       <Classic
         duration={750}
         toggled={isToggled}

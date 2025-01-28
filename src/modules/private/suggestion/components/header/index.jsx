@@ -17,7 +17,7 @@ export const Header = ({ sortBy, setSortBy }) => {
         <SortByDropdown selectedOption={sortBy} onSelect={setSortBy} />
       </div>
 
-      <Link to="/add-feedback">
+      <Link to="/feedbacks/add">
         <Button
           label="+ Add Feedback"
           className="h-[40px] md:h-auto flex items-center"

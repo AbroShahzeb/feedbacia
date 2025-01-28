@@ -62,7 +62,7 @@ export const FeedbackCard = ({
         <div>
           <h3
             className="text-xs md:text-xl font-bold text-grey-400 dark:text-grey-100 hover:underline cursor-pointer"
-            onClick={() => navigate(`/details/${feedback.id}`)}
+            onClick={() => navigate(`/feedbacks/details/${feedback.id}`)}
           >
             {feedback.title}
           </h3>

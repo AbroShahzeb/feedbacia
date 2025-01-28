@@ -7,8 +7,11 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { signupUser } from "../../../../../services/authApi";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { setCredentials } from "../../redux/slice";
 
 export const Signup = () => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -22,6 +25,9 @@ export const Signup = () => {
         toast.error(data.message);
       } else {
         toast.success("Signed up successfully. Redirecting...");
+        localStorage.setItem("user", JSON.stringify(data.data.user));
+        localStorage.setItem("isAuthenticated", true);
+        dispatch(setCredentials(data.data.user));
       }
     },
   });

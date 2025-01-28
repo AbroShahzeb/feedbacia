@@ -50,7 +50,7 @@ export const AddEditFeedback = ({ isEdit = false }) => {
   }, [feedbackData]);
 
   return (
-    <main className="w-full min-h-screen flex items-start justify-center bg-grey-50 dark:bg-grey-950 px-6 py-8 pb-[77px] md:px-[114px] md:pt-[56px] md:pb-[223px]  xl:pt-[92px] xl:pb-[187px]">
+    <main className="w-full min-h-screen flex items-start justify-center bg-grey-50 dark:bg-grey-950 px-6 py-8 pb-[77px] md:px-[114px] md:pb-[223px] pt-10 xl:pb-[187px]">
       <div className="flex flex-col gap-[55px] md:gap-[68px] xl:max-w-[540px] xl:mx-auto xl:w-[540px]">
         <div>
           <Button label="Go back" variant="back-transparent" />

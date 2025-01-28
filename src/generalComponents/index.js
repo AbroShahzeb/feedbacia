@@ -9,6 +9,7 @@ import { CustomTextArea } from "./CustomTextArea";
 import { FeedbackStatusDropdown } from "./FeedbackStatusDropdown";
 import { ThemeToggler } from "./themeToggler";
 import { CustomLoader } from "./CustomLoader";
+import { Logo } from "./Logo";
 
 export {
   Button,
@@ -22,4 +23,5 @@ export {
   FeedbackStatusDropdown,
   ThemeToggler,
   CustomLoader,
+  Logo,
 };

@@ -12,6 +12,7 @@ import {
 } from "../modules/public/auth/components";
 import ProtectedRoute from "./ProtectedRoute";
 import { Profile } from "../modules/private/profile";
+import { AppLayout } from "../layout";
 
 export const AppRouter = () => {
   return (
@@ -26,7 +27,7 @@ export const AppRouter = () => {
           }
         />
         <Route
-          path="/feedbacks"
+          path="feedbacks"
           element={
             <ProtectedRoute>
               <Suggestion />
