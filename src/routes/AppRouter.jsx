@@ -16,6 +16,7 @@ import {
   ConvertToProduct,
   ProfileDetails,
 } from "../modules/private/profile/components";
+import { Product } from "../modules/private/company/components/product";
 
 export const AppRouter = () => {
   return (
@@ -32,6 +33,17 @@ export const AppRouter = () => {
           <Route index element={<Navigate to="details" replace />} />
           <Route path="details" element={<ProfileDetails />} />
           <Route path="convert-to-product" element={<ConvertToProduct />} />
+        </Route>
+
+        <Route path="/company">
+          <Route
+            path="/company/product/:productId"
+            element={
+              <ProtectedRoute>
+                <Product />
+              </ProtectedRoute>
+            }
+          />
         </Route>
         <Route
           path="feedbacks"

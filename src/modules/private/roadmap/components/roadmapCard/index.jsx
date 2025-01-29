@@ -1,7 +1,9 @@
 import { CategoryTag, UpvoteCount } from "../../../../../generalComponents";
 import iconComment from "../../../../../assets/shared/icon-comments.svg";
+import { useNavigate } from "react-router-dom";
 
 export const RoadmapCard = ({ feedback, activeTab }) => {
+  const navigate = useNavigate();
   return (
     <div
       className={`bg-grey-0 dark:bg-grey-600 rounded-[10px] p-6   ${`border-t-[6px] ${activeTab.border} `}`}
@@ -17,7 +19,7 @@ export const RoadmapCard = ({ feedback, activeTab }) => {
         <div>
           <h3
             className="text-xs  font-bold text-grey-400 dark:text-grey-100 hover:underline cursor-pointer"
-            onClick={() => navigate(`/details/${feedback.id}`)}
+            onClick={() => navigate(`/feedbacks/details/${feedback.id}`)}
           >
             {feedback.title}
           </h3>
